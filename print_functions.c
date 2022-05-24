@@ -47,6 +47,7 @@ void pstr(stack_t **head, unsigned int l)
 	}
 }
 
+
 /**
  * pint - peek the top of the stack
  * @h: pointer to dll

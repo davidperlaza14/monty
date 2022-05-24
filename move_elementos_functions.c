@@ -11,26 +11,26 @@
  */
 void swap(stack_t **h, unsigned int l)
 {
-    int value0;
+	int value0;
 
-    if(!h || !*h)
-    {
-        printf("L%d: can't swap, %s too short\n", l, flag);
-        free_stack(*h);
-        exit(EXIT_FAILURE);
-    }
+	if (!h || !*h)
+	{
+		printf("L%d: can't swap, %s too short\n", l, flag);
+		free_stack(*h);
+		exit(EXIT_FAILURE);
+	}
 
-    value0 = (*h)->n;
+	value0 = (*h)->n;
 
-    if ((*h)->next == NULL)
-    {
-        printf("L%d: can't swap, %s too short\n", l, flag);
-        free_stack(*h);
-        exit(EXIT_FAILURE);
-    }
+	if ((*h)->next == NULL)
+	{
+		printf("L%d: can't swap, %s too short\n", l, flag);
+		free_stack(*h);
+		exit(EXIT_FAILURE);
+	}
 
-    (*h)->n = ((*h)->next)->n;
-    ((*h)->next)->n = value0;
+	(*h)->n = ((*h)->next)->n;
+	((*h)->next)->n = value0;
 }
 
 
@@ -42,23 +42,23 @@ void swap(stack_t **h, unsigned int l)
  */
 void rotl(stack_t **h, unsigned int l)
 {
-    stack_t *node, *tmp;
+	stack_t *node, *tmp;
 
-    (void) l;
+	(void) l;
 
-    if (!h || !*h)
-            return;
-    if (!(*h)->next)
-        return;
+	if (!h || !*h)
+		return;
+	if (!(*h)->next)
+		return; /*one element in the stack*/
 
-    node = pop_s(h);
-    node->next = NULL;
+	node = pop_s(h);
+	node->next = NULL;
 
-    tmp = *h;
-    while (tmp->next)
-            tmp = tmp->next;
-    tmp->next = node;
-    node->prev = tmp;
+	tmp = *h;
+	while (tmp->next)
+		tmp = tmp->next;
+	tmp->next = node;
+	node->prev = tmp;
 }
 
 

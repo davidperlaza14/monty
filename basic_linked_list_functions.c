@@ -1,4 +1,5 @@
 #include "monty.h"
+
 /**
  * add_node - push or enqueue an element at the beginning of the stack
  * @head: pointer to dll

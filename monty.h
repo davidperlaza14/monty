@@ -91,4 +91,4 @@ void execute(stack_t **h, char *line, unsigned int line_number);
 /*in main*/
 int main(int ac, char **av);
 
-#endif/*_MONTY_H_*/
+#endif
